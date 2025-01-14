@@ -4,7 +4,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import himedia.myportal.exceptions.MainControllerException;
 
@@ -18,16 +17,18 @@ public class MainController {
 	
 	@RequestMapping("/except")
 	public String except() {
-//		throw new RuntimeException("force Exception");	//	v1
-		throw new MainControllerException();			//	v2
+		throw new RuntimeException("force Exception");	//	v1
+//		throw new MainControllerException();			//	v2
 	}
 	
 	//	ExceptionHandler v1
+	/*
 	@ExceptionHandler(RuntimeException.class)
 	@ResponseBody
 	public String handlerControllerException(RuntimeException e) {
 		return "Exception: " + e.getMessage();
 	}
+	*/
 	
 	//	ExceptionHandler v2
 	@ExceptionHandler(MainControllerException.class)
