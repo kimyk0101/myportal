@@ -15,10 +15,14 @@
            http://www.springframework.org/schema/aop 
            http://www.springframework.org/schema/aop/spring-aop.xsd">
 	<context:annotation-config />
+	<!-- context:component-scan base-package="himedia.myportal" use-default-filters="false" -->
 	<context:component-scan base-package="himedia.myportal">
-		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+		<!-- 1. 컴포넌트 스캔할 때, 특별히 명시하지 않으면 include-filter는 하지 않아도 된다.
+			 2. include-filter를 사용하려면 use-default-filters="false"로 지정해야 한다
+			 3. include-filter와 excluse-filter가 함께 나올 때는 include-filter를 먼저 진행해야 한다. -->
 		<!-- context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Component"/-->
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
 </beans>
