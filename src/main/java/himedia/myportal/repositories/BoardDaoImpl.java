@@ -1,4 +1,4 @@
-package himedia.myportal.repositories.vo;
+package himedia.myportal.repositories;
 
 import java.util.List;
 
@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import himedia.myportal.exceptions.BoardDaoException;
-import himedia.myportal.repositories.BoardDao;
+import himedia.myportal.repositories.vo.BoardVo;
 
 @Repository
 public class BoardDaoImpl implements BoardDao {
-	@Autowired
+	@Autowired 
 	SqlSession sqlSession;
 	
 	@Override
@@ -32,12 +32,13 @@ public class BoardDaoImpl implements BoardDao {
 	@Override
 	public BoardVo getContent(Integer no) {
 		sqlSession.update("board.increaseHitCount", no);
-		BoardVo vo = sqlSession.selectOne("board.getContent" , no);
+		BoardVo vo = sqlSession.selectOne("board.getContent", no);
 		return vo;
 	}
 
 	@Override
 	public int update(BoardVo boardVo) {
+		
 		return 0;
 	}
 
