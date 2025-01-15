@@ -13,30 +13,11 @@
 </head>
 <body>
   <div id="container">
-  	<!-- jsp -->
-  	<%-- 
-    <jsp:include page="/WEB-INF/views/includes/header.jsp">
-    	<jsp:param name="param1" value="value1" />
-    	<jsp:param name="param2" value="value2" />
-    </jsp:include>
-   
-    <jsp:include page="/WEB-INF/views/includes/navigation.jsp" />
-    <div id="wrapper">
-      <div id="content">
-			<!-- Content 영역 -->
-      </div>
-	</div>
-	
-    <!-- 동적으로 반응할 필요가 없는 경우 @include -->
-	<%@ include file="/WEB-INF/views/includes/footer.jsp" %>
-	--%>
-	
-	<!-- jstl -->
-    <c:import url="/WEB-INF/views/includes/header.jsp" >
-    	<c:param name="param1" value="value1" />
-    	<c:param name="param2" value="value2" />
+  
+    <c:import url="/WEB-INF/views/includes/header.jsp">
+      <c:param name="param1" value="value1" />
+      <c:param name="param1" value="value2" />
     </c:import>
-    
 	<c:import url="/WEB-INF/views/includes/navigation.jsp" />
 	<div id="wrapper">
       <div id="content">

@@ -25,7 +25,7 @@
       
      <!-- Content -->
 	<h1>방명록</h1>
-	<form action="" 
+	<form action="<c:url value="/guestbook/write" />" 
 			method="POST">
 	<table border=1 width=500>
 		<tr>
@@ -51,7 +51,7 @@
 			<td><fmt:formatDate value="${vo.regdate }" pattern="yyyy-MM-dd" /></td>
 			<td>
 				<!-- 수정 -->
-				<a href="">
+				<a href="<c:url value="/guestbook/delete/${vo.no }" />" >
 					삭제
 				</a>
 			</td>
