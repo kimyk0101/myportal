@@ -3,6 +3,8 @@ package himedia.myportal.controllers;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +21,8 @@ import jakarta.servlet.http.HttpSession;
 @Controller
 @RequestMapping("/users")
 public class UsersController {
+	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
+	
 	@Autowired
 	UserService userServiceImpl;
 	
@@ -37,10 +41,10 @@ public class UsersController {
 		boolean success = userServiceImpl.join(userVo);
 		
 		if (!success) {
-			System.err.println("회원가입 실패!");
+			logger.debug("회원가입 실패!");
 			return "redirect:/users/join";
 		} else {
-			System.out.println("회원가입 성공!");
+			logger.debug("회원가입 성공!");
 			return "redirect:/users/joinsuccess";
 		}
 	}
@@ -55,7 +59,7 @@ public class UsersController {
 								@RequestParam(value="password", required=false) String password,
 								HttpSession session) {
 		if (email.length() == 0 || password.length() == 0) {
-			System.err.println("email 혹은 password가 전송되지 않음");
+			logger.debug("email 혹은 password가 전송되지 않음");
 			return "redirect:/users/login";
 		} 
 		
