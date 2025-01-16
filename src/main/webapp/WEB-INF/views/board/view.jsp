@@ -28,6 +28,10 @@
 						<th colspan="2">글보기</th>
 					</tr>
 					<tr>
+						<th>작성자</th>
+						<td>${vo.userName }</td>
+					</tr>
+					<tr>
 						<td>제목</td>
 						<td>${vo.title }</td>
 					</tr>
@@ -38,8 +42,12 @@
 						</td>
 					</tr>
 					<tr>
-						<td colspan="2"><a href="<c:url value="/board" /> ">글목록</a> <a
-							href="">글수정</a></td>
+						<td colspan="2"><a href="<c:url value="/board" /> ">글목록</a> 
+						<c:if test="${not empty authUser }">
+							<c:if test="${authUser.no == vo.userNo }">
+								<a href="<c:url value="/board/${vo.no }/modify" />" >글수정</a></td>
+							</c:if>
+						</c:if>
 					</tr>
 				</table>
 
