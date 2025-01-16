@@ -82,13 +82,13 @@ public class UsersController {
 	@GetMapping("/checkEmail")
 	//	JSON API
 	public Object exists(@RequestParam(value="email", required=false, defaultValue="") String email) {
-		//	{ "result": "success", "data": true }
+		//	{ "result": "success", "exists": true }
 		UserVo vo = userServiceImpl.getUser(email);
 		boolean exists = vo != null ? true : false;
 		
 		Map<String, Object> map = new HashMap<>();
 		map.put("result", "success");
-		map.put("data", exists);
+		map.put("exists", exists);
 		
 		return map;
 	}
