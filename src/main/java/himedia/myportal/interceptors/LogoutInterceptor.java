@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 public class LogoutInterceptor implements HandlerInterceptor {
-	private final static Logger logger = LoggerFactory.getLogger(LogoutInterceptor.class);
+	private static final Logger logger = LoggerFactory.getLogger(LogoutInterceptor.class);
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
