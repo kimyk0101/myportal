@@ -1,13 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <html>
 <head>
 <meta charset="UTF-8">
 <title>My Homepage</title>
-<link type="text/css" 
-	rel="stylesheet" 
-	href="<%= request.getContextPath() %>/css/board.css"/>
+<link type="text/css" rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/board.css" />
 </head>
 <body>
 	<div id="container">
@@ -20,7 +20,7 @@
 		<div id="wrapper">
 			<div id="content">
 
-				<table border="1" width="640">
+				<table border="1" width="580">
 					<tr>
 						<td colspan="2"><h3>게시판</h3></td>
 					</tr>
@@ -42,11 +42,11 @@
 						</td>
 					</tr>
 					<tr>
-						<td colspan="2"><a href="<c:url value="/board" /> ">글목록</a> 
-						<c:if test="${not empty authUser }">
-							<c:if test="${authUser.no == vo.userNo }">
-								<a href="<c:url value="/board/${vo.no }/modify" />" >글수정</a></td>
-							</c:if>
+						<td colspan="2"><a href="<c:url value="/board" /> ">글목록</a> <c:if
+								test="${not empty authUser }">
+								<c:if test="${authUser.no == vo.userNo }">
+									<a href="<c:url value="/board/${vo.no }/modify" />">글수정</a></td>
+						</c:if>
 						</c:if>
 					</tr>
 				</table>

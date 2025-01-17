@@ -22,7 +22,7 @@
 			<div id="content">
 
 
-				<table border="1" width="640">
+				<table border="1" width="580">
 					<tr>
 						<td colspan="6"><h3>게시판</h3></td>
 					</tr>

@@ -56,9 +56,29 @@
 	
 	<!-- Interceptors -->
 	<mvc:interceptors>
-		<mvc:interceptor>
+		<!-- mvc:interceptor>
 			<mvc:mapping path="/board/**" />
 			<bean class="himedia.myportal.interceptors.MyInterceptor" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/board/**" />
+			<bean class="himedia.myportal.interceptors.MyInterceptor2" />
+		</mvc:interceptor -->
+		<mvc:interceptor>
+		
+			<!-- Board 서비스에는 기본적으로 로그인이 필요 -->
+			<!-- board/list는 모든 사용자가 열람할 수 있도록 (제한사항에서 빼야 함) -->
+			<mvc:mapping path="/board/**" />
+			<mvc:exclude-mapping path="/board" />
+			<mvc:exclude-mapping path="/board/" />
+			<mvc:exclude-mapping path="/board/list" />
+			<bean class="himedia.myportal.interceptors.AuthInterceptor" />
+		</mvc:interceptor>
+		
+		<!-- 로그아웃 인터셉터 -->
+		<mvc:interceptor>
+			<mvc:mapping path="/users/Logout" />
+			<bean class="himedia.myportal.interceptors.LogoutInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>
 

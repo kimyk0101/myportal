@@ -21,7 +21,7 @@
 			<div id="content">
 				<form method="post" action="<c:url value="/board/modify" />">
 					<input type="hidden" name="no" value="${vo.no }" />
-					<table border="1" width="640">
+					<table border="1" width="580">
 						<tr>
 							<td colspan="2"><h3>게시판</h3></td>
 						</tr>
