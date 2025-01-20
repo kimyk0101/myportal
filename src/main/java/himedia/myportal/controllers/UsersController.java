@@ -32,7 +32,8 @@ public class UsersController {
 	UserService userServiceImpl;
 	
 	@GetMapping({"", "/", "/join"})
-	public String joinForm() {
+	public String joinForm(@ModelAttribute UserVo userVo) {
+		userVo.setGender("M");	//	기본값 설정
 		return "users/joinform";
 	}
 	
