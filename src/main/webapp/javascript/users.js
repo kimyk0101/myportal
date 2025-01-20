@@ -32,6 +32,7 @@ function checkEmail(event) {
 window.addEventListener("load", (event) => {
 	document.getElementById("check-email")
 		.addEventListener("click", checkEmail);
+	
 		
 	document.getElementById("join-form")
 		.addEventListener("submit", event => {
@@ -39,6 +40,7 @@ window.addEventListener("load", (event) => {
 		event.preventDefault();
 		const frm = event.target;
 		
+		/*
 		if (frm.name.value.trim().length === 0) {
 			alert("이름을 입력하세요.");
 			frm.name.focus();
@@ -56,6 +58,7 @@ window.addEventListener("load", (event) => {
 			frm.email.focus();
 			return;
 		}
+		*/
 		
 		if (frm.emailCheck.value !== 'y') {
 			alert("이메일 중복 확인을 해 주세요!");
@@ -64,4 +67,5 @@ window.addEventListener("load", (event) => {
 		
 		frm.submit();
 	})
+	
 })
