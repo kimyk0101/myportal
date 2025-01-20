@@ -68,6 +68,8 @@
 					<br />
 					<label for="gender">성별</label>
 
+					<!-- form:radiobutton path="gender" value="M" label="남성" checked=checked
+							UserVo와 충돌남 gender의 기본값 설정은 Controller에서 -->
 					<form:radiobutton path="gender" value="M" label="남성" />
 					<form:radiobutton path="gender" value="F" label="여성" />
 					<br>
